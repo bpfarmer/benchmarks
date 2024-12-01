@@ -16,7 +16,11 @@ pub fn main() {
     // Compared to the original form with hardcoded value we:
     // 1. Read from stdin
     let input: Vec<u8> = sp1_zkvm::io::read();
-    let output = keccak(&input);
+    let mut output = keccak(input);
+    let n: u32 = 1000;
+    for _ in 1..n {
+        output = keccak(&output);
+    }
     
     // 2. Commit to bytes directly with no hex conversion
     sp1_zkvm::io::commit(&output);

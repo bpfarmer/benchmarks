@@ -2673,6 +2673,7 @@ dependencies = [
  "ark-std 0.4.0",
  "sp1-build",
  "sp1-sdk",
+ "succinct",
 ]
 
 [[package]]
@@ -5120,6 +5121,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7dcb1ed7b8330c5eed5441052651dd7a12c75e2ed88f2ec024ae1fa3a5e59945"
 dependencies = [
  "zeroize",
+]
+
+[[package]]
+name = "succinct"
+version = "0.5.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7798b62081a999bcf090b2f220fee8845dd1c6ffeb17e1bc6ca783825f62a418"
+dependencies = [
+ "byteorder",
+ "num-traits",
 ]
 
 [[package]]

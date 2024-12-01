@@ -11,7 +11,11 @@ fn keccak(input: &[u8]) -> [u8; 32] {
 #[jolt::provable]
 pub fn guest_main() -> String {
     let input: &[u8] = &[5u8; 32];
-    let output = keccak(input);
+    let mut output = keccak(input);
+    let n: u32 = 1000;
+    for _ in 1..n {
+        output = keccak(&output);
+    }
     
     let output_hex = hex::encode(output);
     output_hex
